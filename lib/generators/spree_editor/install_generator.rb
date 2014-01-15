@@ -4,11 +4,11 @@ module SpreeEditor
       source_root File.expand_path("../../../templates", __FILE__)
 
       def add_javascripts
-        append_file "app/assets/javascripts/application.js", "//= require admin/spree_editor\n"
+        append_file "app/assets/javascripts/backend/all.js", "//= require admin/spree_editor\n"
       end
 
       def add_stylesheets
-        inject_into_file "app/assets/stylesheets/spree/backend.css", " *= require admin/spree_editor\n", :before => /\*\//, :verbose => true
+        inject_into_file "app/assets/stylesheets/backend/all.css", " *= require admin/spree_editor\n", :before => /\*\//, :verbose => true
       end
 
       def copy_tinymce_file
